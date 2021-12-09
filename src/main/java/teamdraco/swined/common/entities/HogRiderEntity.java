@@ -52,6 +52,10 @@ public class HogRiderEntity extends AbstractIllager {
         return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, (double)0.35F).add(Attributes.MAX_HEALTH, 24.0D).add(Attributes.ATTACK_DAMAGE, 5.0D).add(Attributes.FOLLOW_RANGE, 32.0D);
     }
 
+    public AbstractIllager.IllagerArmPose getArmPose() {
+        return IllagerArmPose.ATTACKING;
+    }
+
     public void travel(Vec3 p_27490_) {
         if (this.isEffectiveAi() && this.isInWater()) {
             if (!level.getBlockState(blockPosition().below()).is(Blocks.WATER) && !level.getBlockState(blockPosition().above()).isAir()) {
